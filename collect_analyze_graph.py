@@ -20,6 +20,8 @@ while running == True:
 	try:
 		# get data from input text file
 		with open('new_data.txt', 'r') as f:
+			if f.read() == '':
+				continue
 			new_data = pd.read_csv(f, sep = " ")
 			# latest frame id
 			frame_id = new_data.iloc[0,0]
